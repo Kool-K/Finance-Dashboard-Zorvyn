@@ -40,7 +40,7 @@ export default class Sidebar extends BaseComponent {
     });
 
     const logoImg = document.createElement('img');
-    logoImg.src = '/src/assets/zorvynLogo.png';
+    logoImg.src = '/zorvynLogo.png';
     logoImg.alt = 'Zorvyn Logo';
     logoImg.style.width = '32px';
     logoImg.style.height = '32px';
