@@ -1,0 +1,133 @@
+/* ============================================
+   Charts Styles
+   ============================================ */
+
+/* ── Card Base ─────────────────────────── */
+
+.chart-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid var(--card-border);
+  transition: box-shadow 0.25s ease, filter 0.2s ease;
+}
+
+.chart-card:hover {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+  filter: brightness(1.05);
+}
+
+.chart-card__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.chart-card__title {
+  font-size: 1rem;
+  font-weight: 650;
+  color: var(--text-main);
+  letter-spacing: -0.015em;
+}
+
+.chart-card__subtitle {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-secondary, #94a3b8);
+}
+
+/* ── Canvas ────────────────────────────── */
+
+.chart__canvas-wrap {
+  position: relative;
+  height: 240px;
+}
+
+.chart__canvas-wrap--donut {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Legend ─────────────────────────────── */
+
+.chart__legend {
+  list-style: none;
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.chart__legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+}
+
+.chart__legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.chart__legend-label {
+  color: var(--text-secondary, #64748b);
+  font-weight: 500;
+  flex: 1;
+}
+
+.chart__legend-value {
+  color: var(--text-main);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Canvas Responsive ─────────────────── */
+
+.chart__canvas-wrap canvas {
+  width: 100% !important;
+}
+
+.chart-card__title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-word;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+
+@media (max-width: 768px) {
+  .chart-card {
+    padding: 18px 16px;
+    border-radius: 14px;
+  }
+
+  .chart__canvas-wrap {
+    height: 200px;
+  }
+
+  .chart__canvas-wrap--donut {
+    height: 180px;
+  }
+
+  .chart__legend {
+    gap: 6px;
+  }
+
+  .chart__legend-item {
+    font-size: 0.75rem;
+  }
+}
+
+/* ── Dark Mode Overrides ──────────────── */
+:root[data-theme='dark'] .chart-card:hover {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}

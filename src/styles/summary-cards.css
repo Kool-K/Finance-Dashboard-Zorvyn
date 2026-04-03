@@ -1,0 +1,190 @@
+/* ============================================
+   Summary Cards Styles
+   ============================================ */
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* ── Card Base ─────────────────────────── */
+
+.summary-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 22px 24px;
+  border: 1px solid var(--card-border);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.2s ease;
+}
+
+.summary-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  filter: brightness(1.05);
+}
+
+/* ── Top Row ───────────────────────────── */
+
+.summary-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.summary-card__icon-badge {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.summary-card__icon-badge svg {
+  width: 20px;
+  height: 20px;
+}
+
+.summary-card--balance .summary-card__icon-badge {
+  background: rgba(99, 102, 241, 0.1);
+  color: #6366f1;
+}
+
+.summary-card--income .summary-card__icon-badge {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--accent-emerald);
+}
+
+.summary-card--expense .summary-card__icon-badge {
+  background: rgba(244, 63, 94, 0.1);
+  color: var(--accent-rose);
+}
+
+/* ── Trend Badge ───────────────────────── */
+
+.summary-card__trend {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+
+.summary-card__trend--up {
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
+}
+
+.summary-card__trend--down {
+  background: rgba(244, 63, 94, 0.1);
+  color: #e11d48;
+}
+
+/* ── Title & Value ─────────────────────── */
+
+.summary-card__title {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary, #64748b);
+  margin-bottom: 4px;
+  letter-spacing: 0.01em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.summary-card__value {
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-word;
+}
+
+/* ── Sparkline (decorative) ────────────── */
+
+.summary-card__sparkline {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 32px;
+  margin-top: 16px;
+}
+
+.summary-card__spark-bar {
+  flex: 1;
+  border-radius: 3px;
+  min-height: 6px;
+  transition: height 0.4s ease;
+}
+
+.summary-card--balance .summary-card__spark-bar {
+  background: rgba(99, 102, 241, 0.15);
+}
+
+.summary-card--income .summary-card__spark-bar {
+  background: rgba(16, 185, 129, 0.15);
+}
+
+.summary-card--expense .summary-card__spark-bar {
+  background: rgba(244, 63, 94, 0.15);
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+
+@media (max-width: 768px) {
+  .summary-cards {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .summary-card {
+    padding: 18px 20px;
+  }
+
+  .summary-card__value {
+    font-size: 1.4rem;
+  }
+}
+
+/* ── Dark Mode Overrides ──────────────── */
+
+:root[data-theme='dark'] .summary-card {
+  border-left: 3px solid transparent;
+  background-image: none;
+}
+
+:root[data-theme='dark'] .summary-card--balance {
+  border-left-color: #6366f1;
+  background-image: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, transparent 60%);
+}
+
+:root[data-theme='dark'] .summary-card--income {
+  border-left-color: #10b981;
+  background-image: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, transparent 60%);
+}
+
+:root[data-theme='dark'] .summary-card--expense {
+  border-left-color: #f43f5e;
+  background-image: linear-gradient(135deg, rgba(244, 63, 94, 0.05) 0%, transparent 60%);
+}
+
+:root[data-theme='dark'] .summary-card__title {
+  color: var(--text-secondary);
+}
+
+:root[data-theme='dark'] .summary-card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}

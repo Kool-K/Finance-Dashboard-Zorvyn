@@ -1,0 +1,129 @@
+/* ============================================
+   Footer Styles
+   ============================================ */
+
+.app-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: auto;
+  gap: 16px;
+}
+
+/* ── Left: Copyright ──────────────────── */
+
+.app-footer__copy {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #64748b;
+}
+
+/* ── Center: Status Badge ─────────────── */
+
+.app-footer__center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-footer__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 14px;
+  border-radius: 20px;
+  background: rgba(16, 185, 129, 0.06);
+  border: 1px solid rgba(16, 185, 129, 0.15);
+}
+
+.app-footer__status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  animation: footerPulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes footerPulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+  50% { opacity: 0.7; box-shadow: 0 0 0 4px rgba(16, 185, 129, 0); }
+}
+
+.app-footer__status-text {
+  font-size: 0.7rem;
+  font-weight: 550;
+  color: #10b981;
+  letter-spacing: 0.02em;
+}
+
+/* ── Right: Version & Credits ─────────── */
+
+.app-footer__right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.app-footer__version {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: #64748b;
+}
+
+.app-footer__sep {
+  font-size: 0.72rem;
+  color: #475569;
+}
+
+.app-footer__link {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--brand-blue);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.app-footer__link:hover {
+  color: #5a93f5;
+  text-decoration: underline;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+
+@media (max-width: 768px) {
+  .app-footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 16px;
+    gap: 10px;
+  }
+}
+
+/* ── Dark Mode Overrides ──────────────── */
+
+:root[data-theme='dark'] .app-footer {
+  border-top-color: rgba(255, 255, 255, 0.05);
+}
+
+:root[data-theme='dark'] .app-footer__copy {
+  color: #475569;
+}
+
+:root[data-theme='dark'] .app-footer__version {
+  color: #475569;
+}
+
+:root[data-theme='dark'] .app-footer__sep {
+  color: #334155;
+}
+
+/* Light mode border */
+:root:not([data-theme='dark']) .app-footer {
+  border-top-color: #e2e8f0;
+}

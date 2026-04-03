@@ -1,0 +1,148 @@
+/* ============================================
+   Insights Styles
+   ============================================ */
+
+.insights {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.insights__title {
+  font-size: 1rem;
+  font-weight: 650;
+  color: var(--text-main);
+  letter-spacing: -0.015em;
+  margin-bottom: 2px;
+}
+
+/* ── Insight Card ──────────────────────── */
+
+.insights-card {
+  background: var(--card-bg);
+  border-radius: 14px;
+  padding: 18px 20px;
+  border: 1px solid var(--card-border);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.insights-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  filter: brightness(1.05);
+}
+
+/* Accent left border */
+.insights-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+}
+
+.insights-card--rose::before {
+  background: var(--accent-rose);
+}
+
+.insights-card--emerald::before {
+  background: var(--accent-emerald);
+}
+
+.insights-card--indigo::before {
+  background: #6366f1;
+}
+
+/* ── Top Row ───────────────────────────── */
+
+.insights-card__top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.insights-card__icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.insights-card__icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+.insights-card--rose .insights-card__icon {
+  background: rgba(244, 63, 94, 0.1);
+  color: var(--accent-rose);
+}
+
+.insights-card--emerald .insights-card__icon {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--accent-emerald);
+}
+
+.insights-card--indigo .insights-card__icon {
+  background: rgba(99, 102, 241, 0.1);
+  color: #6366f1;
+}
+
+.insights-card__label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-secondary, #94a3b8);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ── Value & Detail ────────────────────── */
+
+.insights-card__value {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+  margin-bottom: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
+
+.insights-card__detail {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-secondary, #64748b);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+
+@media (max-width: 768px) {
+  .insights-card {
+    padding: 16px 18px;
+  }
+
+  .insights-card__value {
+    font-size: 0.95rem;
+  }
+}
+
+/* ── Dark Mode Overrides ──────────────── */
+:root[data-theme='dark'] .insights-card {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+:root[data-theme='dark'] .insights-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}

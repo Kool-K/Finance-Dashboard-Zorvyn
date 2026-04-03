@@ -1,0 +1,33 @@
+/* ============================================
+   Design Tokens — Finance Dashboard (Zorvyn)
+   ============================================ */
+
+:root {
+  /* Surface colors */
+  --primary-bg: #f8fafc;
+  --card-bg: #ffffff;
+  --sidebar-bg: #0f172a;
+  --card-border: #e2e8f0;
+
+  /* Text */
+  --text-main: #0f172a;
+  --text-secondary: #64748b;
+
+  /* Header */
+  --header-bg: rgba(255, 255, 255, 0.85);
+
+  /* Accents */
+  --accent-emerald: #10b981;
+  --accent-rose: #f43f5e;
+  --brand-blue: #427cf0;
+}
+
+:root[data-theme='dark'] {
+  --primary-bg: #020617;
+  --card-bg: #0f172a;
+  --sidebar-bg: #0b1121;
+  --card-border: rgba(255, 255, 255, 0.08);
+  --text-main: #E2E8F0;
+  --text-secondary: #94A3B8;
+  --header-bg: rgba(2, 6, 23, 0.85);
+}

@@ -1,0 +1,321 @@
+/* ============================================
+   Header Styles
+   ============================================ */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 32px;
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--card-border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(12px);
+  background: var(--header-bg);
+  gap: 12px;
+}
+
+/* ── Left ──────────────────────────────── */
+
+.header__left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.header__title-wrap {
+  min-width: 0;
+}
+
+.header__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.025em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.header__subtitle {
+  font-size: 0.85rem;
+  color: var(--text-secondary, #64748b);
+  margin-top: 2px;
+  font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Hamburger (mobile only) ──────────── */
+
+.header__hamburger {
+  display: none; /* hidden on desktop */
+  background: #f1f5f9;
+  border: none;
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #475569;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.header__hamburger:hover {
+  background: #e2e8f0;
+  color: var(--text-main);
+}
+
+.header__hamburger svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ── Right ─────────────────────────────── */
+
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* ── Admin Pill ────────────────────────── */
+
+.header__admin-pill {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-emerald);
+  background: rgba(16, 185, 129, 0.1);
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+/* ── Icon Button ───────────────────────── */
+
+.header__icon-btn {
+  position: relative;
+  background: #f1f5f9;
+  border: none;
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #475569;
+  flex-shrink: 0;
+}
+
+.header__icon-btn:hover {
+  background: #e2e8f0;
+  color: var(--text-main);
+}
+
+.header__icon-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.header__notif-badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent-rose);
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--card-bg);
+}
+
+/* ── Role Toggle ───────────────────────── */
+
+.header__role-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: inherit;
+  flex-shrink: 0;
+}
+
+.header__role-toggle:hover {
+  background: #e2e8f0;
+  border-color: #cbd5e1;
+}
+
+.header__role-icon {
+  width: 16px;
+  height: 16px;
+  color: #64748b;
+}
+
+.header__role-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-main);
+  min-width: 42px;
+}
+
+.header__toggle-pill {
+  width: 36px;
+  height: 20px;
+  border-radius: 10px;
+  background: #cbd5e1;
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+.header__toggle-pill--admin {
+  background: var(--accent-emerald);
+}
+
+.header__toggle-circle {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.header__toggle-pill--admin .header__toggle-circle {
+  transform: translateX(16px);
+}
+
+/* ── Avatar ────────────────────────────── */
+
+.header__avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+
+/* ============================================
+   Responsive: Mobile
+   ============================================ */
+
+@media (max-width: 768px) {
+  .header {
+    padding: 12px 14px;
+    flex-wrap: nowrap; /* Keep on single line */
+    gap: 8px;
+  }
+
+  .header__hamburger {
+    display: flex;
+  }
+
+  .header__title {
+    font-size: 1.15rem;
+  }
+
+  .header__subtitle {
+    display: none;
+  }
+
+  .header__right {
+    gap: 8px;
+  }
+
+  .header__admin-pill {
+    display: none; /* Hide admin pill on mobile to save space */
+  }
+
+  .header__role-label {
+    display: none;
+  }
+
+  .header__role-icon {
+    display: none;
+  }
+
+  .header__role-toggle {
+    padding: 6px 8px;
+    gap: 0;
+  }
+}
+
+/* ── Dark Mode Overrides ──────────────── */
+
+:root[data-theme='dark'] .header {
+  border-bottom-color: rgba(255, 255, 255, 0.06);
+}
+
+:root[data-theme='dark'] .header__icon-btn {
+  background: rgba(255, 255, 255, 0.08);
+  color: #E2E8F0;
+}
+
+:root[data-theme='dark'] .header__icon-btn:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+}
+
+:root[data-theme='dark'] .header__role-toggle {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #E2E8F0;
+}
+
+:root[data-theme='dark'] .header__role-toggle:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+:root[data-theme='dark'] .header__role-icon {
+  color: #E2E8F0;
+}
+
+:root[data-theme='dark'] .header__role-label {
+  color: #E2E8F0;
+}
+
+:root[data-theme='dark'] .header__hamburger {
+  background: rgba(255, 255, 255, 0.08);
+  color: #E2E8F0;
+}
+
+:root[data-theme='dark'] .header__subtitle {
+  color: var(--text-secondary);
+}
+
+:root[data-theme='dark'] .header__toggle-pill {
+  background: #334155;
+}
