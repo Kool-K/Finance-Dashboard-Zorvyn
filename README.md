@@ -1,6 +1,6 @@
 # Zorvyn — Advanced Finance Dashboard
 
-🌍 **Live Demo:** [finance-dashboard-zorvyn-ketaki.vercel.app](finance-dashboard-zorvyn-ketaki.vercel.app)
+🌍 **Live Demo:** [https://finance-dashboard-zorvyn-ketaki.vercel.app/](https://finance-dashboard-zorvyn-ketaki.vercel.app/)
 
 A premium, high-fidelity responsive web application showcasing meticulous UI/UX design and modern front-end engineering, built specifically for exploring financial metrics, transactions, and real-time dashboard analytics.
 
